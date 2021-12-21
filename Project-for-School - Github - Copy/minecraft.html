@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+  .list {
+      margin: 10px auto;
+      width: 30%;
+      box-sizing: border-box;
+  }
+  .list-element {
+      width: 4 0%;
+      margin: 25px 0px;
+      font-family: arial;
+      border-radius: 50px;
+      padding: 6px 0px;
+      color: #2196f3;
+      font-size: 14px;
+      text-align: center;
+      box-shadow: 0px 0px 6px 0px #848484;
+      display: none;
+      margin: auto;
+      margin-bottom: 6px;
+  }
+  #loadmore {
+      margin: 5px auto 0px;
+      display: table;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      cursor: pointer;
+      color: #fff;
+      border-radius: 4px;
+      background-color: #2196f3;
+  }
+  .list .list-element:nth-child(1) {
+      display: block;
+  }
+
+      ul{list-style-type: none;
+        margin:0;
+        padding:0;
+        overflow: hidden;
+        background-color:#333;}
+      li{float:left;}
+      li a{display: block; color:white; text-align: center; padding: 14px 16px; text-decoration: none;}
+      li a:hover:not(.active){background-color: #111;}
+      .active {background-color: #04AA6D;}
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="Enlisted.html">Enlisted</a></li>
+      <li><a href="Red_Dead.html">Red Dead</a></li>
+      <li><a href="WRC_9.html">Fia World Rally</a></li>
+      <li><a href="About_us.html">About</a></li>
+      </ul>
+    <h2>Minecraft</h2>
+    <hr>
+    <img src="Minecraft.jpeg">
+    <p> Minecraft, a game loved by most gamers for over a decade, one of the most successful games of all time, and will remain relevant for years. This creative survival game drops you in a unique world, where you must survive and build. Collect resources and build whatever you want, this game allows the player total freedom in decision and how they want to live. The game also has a unique cubic look to the game, making it even more unique.</p><hr>
+    <img src="Survival1.17.png"width="550">
+
+    <div class="list">
+        <div class="list-element"><a href="https://www.minecraft.net/en-us">Where to Download</a></div>
+        <div class="list-element"><a href="https://www.ign.com/articles/2011/11/24/minecraft-review">Review #1</a></div>
+        <div class="list-element"><a href="https://www.commonsensemedia.org/game-reviews/minecraft">Review #2</a></div>
+    </div>
+
+    <!-- Load More Button -->
+    <button id="loadmore">Load More…</button>
+
+  <script>
+  const loadmore = document.querySelector('#loadmore');
+      let currentItems = 1;
+      loadmore.addEventListener('click', (e) => {
+          const elementList = [...document.querySelectorAll('.list .list-element')];
+          for (let i = currentItems; i < currentItems + 1; i++) {
+              if (elementList[i]) {
+                  elementList[i].style.display = 'block';
+              }
+          }
+          currentItems += 1;
+
+          // Load more button will be hidden after list fully loaded
+          if (currentItems >= elementList.length) {
+              event.target.style.display = 'none';
+          }
+      })
+  </script>
+  </body>
+</html>

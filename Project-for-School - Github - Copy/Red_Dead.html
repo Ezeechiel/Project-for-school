@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .list {
+          margin: 10px auto;
+          width: 30%;
+          box-sizing: border-box;
+      }
+      .list-element {
+          width: 4 0%;
+          margin: 25px 0px;
+          font-family: arial;
+          border-radius: 50px;
+          padding: 6px 0px;
+          color: #2196f3;
+          font-size: 14px;
+          text-align: center;
+          box-shadow: 0px 0px 6px 0px #848484;
+          display: none;
+          margin: auto;
+          margin-bottom: 6px;
+      }
+      #loadmore {
+          margin: 5px auto 0px;
+          display: table;
+          border: none;
+          padding: 10px 20px;
+          font-size: 14px;
+          cursor: pointer;
+          color: #fff;
+          border-radius: 4px;
+          background-color: #2196f3;
+      }
+      .list .list-element:nth-child(1) {
+          display: block;
+      }
+      ul{list-style-type: none;
+        margin:0;
+        padding:0;
+        overflow: hidden;
+        background-color:#333;}
+      li{float:left;}
+      li a{display: block; color:white; text-align: center; padding: 14px 16px; text-decoration: none;}
+      li a:hover:not(.active){background-color: #111;}
+      .active {background-color: #04AA6D;}
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li> <a href="index.html">Home</a></li>
+      <li> <a href="Enlisted.html">Enlisted</a></li>
+      <li><a href="Minecraft.html">Minecraft</a></li>
+      <li><a href="WRC_9.html">Fia World Rally</a></li>
+      <li><a href="About_us.html">About</a></li>
+    </ul>
+    <h2>Red Dead Redemption 2</h2>
+    <hr>
+    <img src="readdead.jpeg" alt=cowboy>
+    <p>Read Dead Redeption 2 is a story driven game about a band of outlaws on the run facing the reality that there is nowhere left to run in America. With times changing, their time is up and they must fight to stay alive. The main character, and the one you play as is named Arthur Morgan. The game features an honor system where if you do good things, Arthur acts nicer and if you do bad things, Arthur acts meaner. The honor system will also change many cutscenes and give you a different ending based on if you have positive or negative honor.</p><hr>
+    <img src="Red-dead-photo2.jpg"width="615">
+
+    <div class="list">
+        <div class="list-element"><a href="https://www.rockstargames.com/reddeadredemption2/">Where to Download</a></div>
+        <div class="list-element"><a href="https://www.ign.com/articles/2018/10/25/red-dead-redemption-2-review">Review #1</a></div>
+        <div class="list-element"><a href="https://www.pcgamer.com/red-dead-redemption-2-review/">Review #2</a></div>
+    </div>
+
+    <!-- Load More Button -->
+    <button id="loadmore">Load More…</button>
+
+  <script>
+  const loadmore = document.querySelector('#loadmore');
+      let currentItems = 1;
+      loadmore.addEventListener('click', (e) => {
+          const elementList = [...document.querySelectorAll('.list .list-element')];
+          for (let i = currentItems; i < currentItems + 1; i++) {
+              if (elementList[i]) {
+                  elementList[i].style.display = 'block';
+              }
+          }
+          currentItems += 1;
+
+          // Load more button will be hidden after list fully loaded
+          if (currentItems >= elementList.length) {
+              event.target.style.display = 'none';
+          }
+      })
+  </script>
+  </body>
+</html>
